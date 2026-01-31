@@ -38,20 +38,28 @@ jobs:
         npm test
     
     # 4. 🔐 SAST – Análisis estático de código
+    - name: Setup Python for Semgrep
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install Semgrep
+      run: pip install semgrep
+
     - name: SAST users-service
       run: |
         cd users-service
-        npx semgrep --config=auto --severity=ERROR
+        semgrep --config=auto --severity=ERROR --error
 
     - name: SAST academic-service
       run: |
         cd academic-service
-        npx semgrep --config=auto --severity=ERROR
+        semgrep --config=auto --severity=ERROR --error
 
     - name: SAST api-gateway
       run: |
         cd api-gateway
-        npx semgrep --config=auto --severity=ERROR
+        semgrep --config=auto --severity=ERROR --error
 
       
     # 4. Build – Construir imágenes Docker
