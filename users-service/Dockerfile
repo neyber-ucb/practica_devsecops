@@ -2,6 +2,9 @@
 #FROM node:18-alpine
 FROM node:20-alpine
 
+# Actualizar npm global para resolver vulnerabilidades del base image
+RUN npm install -g npm@latest
+
 # Directorio de trabajo
 WORKDIR /app
 

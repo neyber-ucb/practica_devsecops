@@ -1,0 +1,3 @@
+# Ignore vulnerabilities in npm's global installation (not application dependencies)
+# These are part of the base Node.js image and don't affect application security
+/usr/local/lib/node_modules/npm/
