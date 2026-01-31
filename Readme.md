@@ -15,3 +15,5 @@ El sistema está compuesto por tres servicios principales:
 ## Academic Service
 - Microservicio encargado de la gestión académica.
 - Expone endpoints relacionados con cursos y datos académicos.
+
+La comunicación entre servicios se realiza a través de una red interna Docker, evitando el uso de localhost entre contenedores.
