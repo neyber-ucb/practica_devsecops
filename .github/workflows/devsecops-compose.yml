@@ -47,14 +47,14 @@ jobs:
       uses: aquasecurity/trivy-action@0.20.0
       with:
         image-ref: users-service:latest
-        severity: CRITICAL
+        severity: CRITICAL,HIGH
         exit-code: 1
     # Seguridad – Trivy academic-service
     - name: Trivy scan academic-service
       uses: aquasecurity/trivy-action@0.20.0
       with:
        image-ref: academic-service:latest
-       severity: CRITICAL
+       severity: CRITICAL,HIGH
        exit-code: 1
 
 # Seguridad – Trivy api-gateway
@@ -62,7 +62,7 @@ jobs:
       uses: aquasecurity/trivy-action@0.20.0
       with:
         image-ref: api-gateway:latest
-        severity: CRITICAL
+        severity: CRITICAL,HIGH
         exit-code: 1
 
 # 6. CD – Levantar sistema (solo si todo pasó)
